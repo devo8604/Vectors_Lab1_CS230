@@ -30,6 +30,7 @@ using namespace std;
 //*******************************************************************************
 
 vector<Stamps> stampList;
+vector<Stamps> duplicates;
 vector<Stamps> usa;
 vector<Stamps> france;
 vector<Stamps> germany;
@@ -50,6 +51,7 @@ void CollectionGenerator::stampCollectionGenerator()
     }
     
     stampSorter();
+    duplicateStampSeparator();
     stampCollectionSplitByOrigin();
     StampCollectionDisplayFinalResult();
 }
@@ -107,6 +109,26 @@ void CollectionGenerator::stampSorter()
     }
 }
 
+void CollectionGenerator::duplicateStampSeparator() {
+    
+    bool duplicatesRemoved = false;
+    
+    while (duplicatesRemoved == false) {
+        duplicatesRemoved = true;
+        for (int i = 0; i < stampList.size(); i++) {
+            if (stampList[i].getOrigin() == stampList[i+1].getOrigin()) {
+                if (stampList[i].getFaceValue() == stampList[i+1].getFaceValue()) {
+                    duplicates.push_back(stampList[i]);
+                    stampList.erase(stampList.begin() + i);
+                    i--;
+                    duplicatesRemoved = false;
+                }
+            }
+        }
+    }
+}
+
+
 void CollectionGenerator::stampCollectionSplitByOrigin()
 {
     for (int i = 0; i < stampList.size(); i++) {
@@ -154,6 +176,11 @@ void CollectionGenerator::StampCollectionDisplayFinalResult()
     for (int i = 0; i < holland.size(); i++) {
         cout << "The " << holland[i].getOrigin() << " has a value of " << holland[i].getFaceValue() << " cent(s)" << endl;
         totalValue += holland[i].getFaceValue();
+    }
+    cout << endl << "These are the stamps awaiting a decent trade: " << endl;
+    for (int i = 0; i < duplicates.size(); i++) {
+        cout << "The " << duplicates[i].getOrigin() << " has a value of " << duplicates[i].getFaceValue() << " cent(s)" << endl;
+        totalValue += duplicates[i].getFaceValue();
     }
     cout << endl << "The total value of all of these stamps is: " << "$" << totalValue/100 << endl;
 }

@@ -45,6 +45,7 @@ public:
 private:
     //Variable List
     vector<Stamps> stampList;
+    vector<Stamps> duplicates;
     vector<Stamps> usa;
     vector<Stamps> france;
     vector<Stamps> germany;
@@ -52,6 +53,7 @@ private:
     vector<Stamps> holland;
 
     string stampOriginGenerator(); //Randomly generates stamp origin
+    void duplicateStampSeparator(); //Moves duplicate entries out of the vector
     int stampFaceValueGenerator(); //Randomly generates stamp face value
     void stampSorter(); //Sorts the stamp obects within the vector by face value
     void stampCollectionSplitByOrigin(); //Splits up the stamplist vector and inserts objects into appropriate vectors by origin
