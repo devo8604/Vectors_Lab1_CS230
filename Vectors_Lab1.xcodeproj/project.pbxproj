@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A478F7E196B8F6500C18917 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A478F7D196B8F6500C18917 /* main.cpp */; };
 		4A478F80196B8F6500C18917 /* Vectors_Lab1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A478F7F196B8F6500C18917 /* Vectors_Lab1.1 */; };
+		4A478F88196B904300C18917 /* CollectionGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A478F86196B904300C18917 /* CollectionGenerator.cpp */; };
+		4A478F8E196C987600C18917 /* Stamps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A478F8C196C987600C18917 /* Stamps.cpp */; };
+		4ACB4828196CAC210093838E /* lab1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB4827196CAC210093838E /* lab1.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +28,12 @@
 
 /* Begin PBXFileReference section */
 		4A478F7A196B8F6500C18917 /* Vectors_Lab1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Vectors_Lab1; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A478F7D196B8F6500C18917 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4A478F7F196B8F6500C18917 /* Vectors_Lab1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Vectors_Lab1.1; sourceTree = "<group>"; };
+		4A478F86196B904300C18917 /* CollectionGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollectionGenerator.cpp; sourceTree = "<group>"; };
+		4A478F87196B904300C18917 /* CollectionGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionGenerator.h; sourceTree = "<group>"; };
+		4A478F8C196C987600C18917 /* Stamps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stamps.cpp; sourceTree = "<group>"; };
+		4A478F8D196C987600C18917 /* Stamps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stamps.h; sourceTree = "<group>"; };
+		4ACB4827196CAC210093838E /* lab1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lab1.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,11 @@
 		4A478F7C196B8F6500C18917 /* Vectors_Lab1 */ = {
 			isa = PBXGroup;
 			children = (
-				4A478F7D196B8F6500C18917 /* main.cpp */,
+				4ACB4827196CAC210093838E /* lab1.cpp */,
+				4A478F86196B904300C18917 /* CollectionGenerator.cpp */,
+				4A478F87196B904300C18917 /* CollectionGenerator.h */,
+				4A478F8C196C987600C18917 /* Stamps.cpp */,
+				4A478F8D196C987600C18917 /* Stamps.h */,
 				4A478F7F196B8F6500C18917 /* Vectors_Lab1.1 */,
 			);
 			path = Vectors_Lab1;
@@ -117,7 +127,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A478F7E196B8F6500C18917 /* main.cpp in Sources */,
+				4ACB4828196CAC210093838E /* lab1.cpp in Sources */,
+				4A478F88196B904300C18917 /* CollectionGenerator.cpp in Sources */,
+				4A478F8E196C987600C18917 /* Stamps.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +239,7 @@
 				4A478F85196B8F6500C18917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
