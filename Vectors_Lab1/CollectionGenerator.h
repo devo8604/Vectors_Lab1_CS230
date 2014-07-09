@@ -42,7 +42,7 @@
 class CollectionGenerator
 {
 public:
-    void stampCollectionGenerator(); //Creates the vector of stamp objects
+    void stampCollectionGenerator();                            //Creates the vector of stamp objects
 private:
     //Variable List
     std::vector<Stamps> stampList;
@@ -53,12 +53,12 @@ private:
     std::vector<Stamps> spain;
     std::vector<Stamps> holland;
 
-    std::string stampOriginGenerator(); //Randomly generates stamp origin
-    int stampFaceValueGenerator(); //Randomly generates stamp face value
-    void stampSorter(); //Sorts the stamp obects within the vector by face value
+    std::string stampOriginGenerator();                         //Randomly generates stamp origin
+    int stampFaceValueGenerator();                              //Randomly generates stamp face value
+    void stampSorter();                                         //Sorts the stamp obects within the vector by face value
     void duplicateStampSeparator(std::vector<Stamps>& tempVec); //Removes duplicate entries out of the vector
-    void stampCollectionSplitByOrigin(); //Splits up the stamplist vector and inserts objects into appropriate vectors by origin
-    void StampCollectionDisplayFinalResult(); //Displays the stamp collection and total value
+    void stampCollectionSplitByOrigin();                        //Splits up the stamplist vector by origin
+    void StampCollectionDisplayFinalResult();                   //Displays the stamp collection and total value
 };
 //*******************************************************************************
 //                    END OF CONDITIONAL BLOCK

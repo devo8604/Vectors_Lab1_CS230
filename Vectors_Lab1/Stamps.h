@@ -38,16 +38,16 @@
 class Stamps
     {
 public:
-    Stamps(std::string origin, int value); //Stamp object constructor
-    int getFaceValue(); //get variable function
-    std::string getOrigin(); //get variable function
+    Stamps(std::string origin, int value);  //Stamp object constructor
+    int getFaceValue();                     //get variable function
+    std::string getOrigin();                //get variable function
 private:
     //Variable List
     std::string countryOfOrigin;
     int faceValue;
     
-    void setOrigin(std::string origin); //set variable function
-    void setFaceValue(int value);  //set variable function
+    void setOrigin(std::string origin);     //set variable function
+    void setFaceValue(int value);           //set variable function
     };
 //*******************************************************************************
 //                    END OF CONDITIONAL BLOCK
