@@ -28,7 +28,8 @@
 //   This program generates 100 stamp objects with the "origin" and "faceValue"
 //   attributes and stores the object in a vector. the data is then sorted by value,
 //   then split into different groups by origin. Then it is displayed and the total
-//   value of the stamps is displayed last.
+//   value of the stamps is displayed last. This program als has a duplicate finder
+//   function in CollectionGenerator.cpp named duplicateStampSeparator.
 //
 // INPUTS:   None
 //

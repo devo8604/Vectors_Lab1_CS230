@@ -27,7 +27,8 @@ using namespace std;
 string countryOfOrigin;
 int faceValue;
 
-Stamps::Stamps(string origin, int value) {
+Stamps::Stamps(string origin, int value)
+{
     setOrigin(origin);
     setFaceValue(value);
 }
@@ -36,14 +37,17 @@ string Stamps::getOrigin() {
     return countryOfOrigin;
 }
 
-void Stamps::setOrigin(string origin) {
+void Stamps::setOrigin(string origin)
+{
     countryOfOrigin = origin;
 }
 
-int Stamps::getFaceValue() {
+int Stamps::getFaceValue()
+{
     return faceValue;
 }
 
-void Stamps::setFaceValue(int value) {
+void Stamps::setFaceValue(int value)
+{
     faceValue = value;
 }

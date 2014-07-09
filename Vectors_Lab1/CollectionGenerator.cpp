@@ -51,7 +51,6 @@ void CollectionGenerator::stampCollectionGenerator()
     }
     
     stampSorter();
-    duplicateStampSeparator();
     stampCollectionSplitByOrigin();
     StampCollectionDisplayFinalResult();
 }
@@ -64,7 +63,8 @@ string CollectionGenerator::stampOriginGenerator()
     
     originPicker = rand() % 5 + 1;
         
-    switch (originPicker) {
+    switch (originPicker)
+    {
         case 1:
             originReturn = "USA";
             break;
@@ -96,10 +96,13 @@ void CollectionGenerator::stampSorter()
     bool sorted = false;
     Stamps* stampBuffer;
     
-    while (sorted == false) {
+    while (sorted != true)
+    {
         sorted = true;
-        for (int i = 0; i < stampList.size()-1; i++) {
-            if (stampList[i].getFaceValue() > stampList[i+1].getFaceValue()) {
+        for (int i = 0; i < stampList.size()-1; i++)
+        {
+            if (stampList[i].getFaceValue() > stampList[i+1].getFaceValue())
+            {
                 *stampBuffer = stampList[i];
                 stampList[i] = stampList[i+1];
                 stampList[i+1] = *stampBuffer;
@@ -109,18 +112,22 @@ void CollectionGenerator::stampSorter()
     }
 }
 
-void CollectionGenerator::duplicateStampSeparator() {
+void CollectionGenerator::duplicateStampSeparator(vector<Stamps>& tempVec)
+{
     
     bool duplicatesRemoved = false;
     
-    while (duplicatesRemoved == false) {
+    while (duplicatesRemoved != true)
+    {
         duplicatesRemoved = true;
-        for (int i = 0; i < stampList.size(); i++) {
-            if (stampList[i].getOrigin() == stampList[i+1].getOrigin()) {
-                if (stampList[i].getFaceValue() == stampList[i+1].getFaceValue()) {
-                    duplicates.push_back(stampList[i]);
-                    stampList.erase(stampList.begin() + i);
-                    i--;
+        for (int i = 0; i < tempVec.size(); i++)
+        {
+            if (tempVec[i].getOrigin() == tempVec[i+1].getOrigin())
+            {
+                if (tempVec[i].getFaceValue() == tempVec[i+1].getFaceValue())
+                {
+                    duplicates.push_back(tempVec[i]);
+                    tempVec.erase(tempVec.begin() + i);
                     duplicatesRemoved = false;
                 }
             }
@@ -131,55 +138,80 @@ void CollectionGenerator::duplicateStampSeparator() {
 
 void CollectionGenerator::stampCollectionSplitByOrigin()
 {
-    for (int i = 0; i < stampList.size(); i++) {
+    for (int i = 0; i < stampList.size(); i++)
+    {
         string originBuffer = "";
         originBuffer = stampList[i].getOrigin();
         
-        if (originBuffer == "USA") {
+        if (originBuffer == "USA")
+        {
             usa.push_back(stampList[i]);
-        } else if (originBuffer == "France") {
+        } else if (originBuffer == "France")
+        {
             france.push_back(stampList[i]);
-        } else if (originBuffer == "Germany") {
+        } else if (originBuffer == "Germany")
+        {
             germany.push_back(stampList[i]);
-        } else if (originBuffer == "Spain") {
+        } else if (originBuffer == "Spain")
+        {
             spain.push_back(stampList[i]);
         } else
             holland.push_back(stampList[i]);
     }
+    stampList.erase(stampList.begin(), stampList.end());
 }
 
 void CollectionGenerator::StampCollectionDisplayFinalResult()
 {
     double totalValue = 0;
     
-    for (int i = 0; i < usa.size(); i++) {
+    duplicateStampSeparator(usa);
+    duplicateStampSeparator(france);
+    duplicateStampSeparator(germany);
+    duplicateStampSeparator(spain);
+    duplicateStampSeparator(holland);
+    
+    for (int i = 0; i < usa.size(); i++)
+    {
         cout << "The " << usa[i].getOrigin() << " has a value of " << usa[i].getFaceValue() << " cent(s)" << endl;
         totalValue += usa[i].getFaceValue();
     }
     
     cout << endl << endl;
     
-    for (int i = 0; i < france.size(); i++) {
+    for (int i = 0; i < france.size(); i++)
+    {
         cout << "The " << france[i].getOrigin() << " has a value of " << france[i].getFaceValue() << " cent(s)" << endl;
         totalValue += france[i].getFaceValue();
     }
     
     cout << endl << endl;
     
-    for (int i = 0; i < germany.size(); i++) {
+    for (int i = 0; i < germany.size(); i++)
+    {
         cout << "The " << germany[i].getOrigin() << " stamp has a value of " << germany[i].getFaceValue() << " cent(s)" << endl;
         totalValue += germany[i].getFaceValue();
     }
     
     cout << endl << endl;
     
-    for (int i = 0; i < holland.size(); i++) {
-        cout << "The " << holland[i].getOrigin() << " has a value of " << holland[i].getFaceValue() << " cent(s)" << endl;
+    for (int i = 0; i < spain.size(); i++)
+    {
+        cout << "The " << spain[i].getOrigin() << " stamp has a value of " << spain[i].getFaceValue() << " cent(s)" << endl;
+        totalValue += spain[i].getFaceValue();
+    }
+    
+    cout << endl << endl;
+    
+    for (int i = 0; i < holland.size(); i++)
+    {
+        cout << "The " << holland[i].getOrigin() << " stamp has a value of " << holland[i].getFaceValue() << " cent(s)" << endl;
         totalValue += holland[i].getFaceValue();
     }
     cout << endl << "These are the stamps awaiting a decent trade: " << endl;
-    for (int i = 0; i < duplicates.size(); i++) {
-        cout << "The " << duplicates[i].getOrigin() << " has a value of " << duplicates[i].getFaceValue() << " cent(s)" << endl;
+    for (int i = 0; i < duplicates.size(); i++)
+    {
+        cout << "The " << duplicates[i].getOrigin() << " stamp has a value of " << duplicates[i].getFaceValue() << " cent(s)" << endl;
         totalValue += duplicates[i].getFaceValue();
     }
     cout << endl << "The total value of all of these stamps is: " << "$" << totalValue/100 << endl;

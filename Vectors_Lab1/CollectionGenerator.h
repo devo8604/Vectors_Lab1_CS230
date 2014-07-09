@@ -53,9 +53,9 @@ private:
     vector<Stamps> holland;
 
     string stampOriginGenerator(); //Randomly generates stamp origin
-    void duplicateStampSeparator(); //Moves duplicate entries out of the vector
     int stampFaceValueGenerator(); //Randomly generates stamp face value
     void stampSorter(); //Sorts the stamp obects within the vector by face value
+    void duplicateStampSeparator(vector<Stamps>& tempVec); //Removes duplicate entries out of the vector
     void stampCollectionSplitByOrigin(); //Splits up the stamplist vector and inserts objects into appropriate vectors by origin
     void StampCollectionDisplayFinalResult(); //Displays the stamp collection and total value
 };
