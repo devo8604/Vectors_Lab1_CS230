@@ -159,17 +159,16 @@ void CollectionGenerator::stampCollectionSplitByOrigin()
             holland.push_back(stampListMaster[i]);
     }
     stampListMaster.erase(stampListMaster.begin(), stampListMaster.end());
-}
-
-void CollectionGenerator::StampCollectionDisplayFinalResult()
-{
-    double totalValue = 0;
-    
     duplicateStampSeparator(usa);
     duplicateStampSeparator(france);
     duplicateStampSeparator(germany);
     duplicateStampSeparator(spain);
     duplicateStampSeparator(holland);
+}
+
+void CollectionGenerator::StampCollectionDisplayFinalResult()
+{
+    double totalValue = 0;
     
     for (int i = 0; i < usa.size(); i++)
     {
