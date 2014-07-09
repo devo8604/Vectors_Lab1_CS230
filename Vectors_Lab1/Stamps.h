@@ -33,23 +33,22 @@
 //*******************************************************************************
 //                  STANDARD AND USER DEFINED INCLUDES
 #include <string>
-using namespace std;
 //*******************************************************************************
 //                     USER DEFINED DATA TYPES
-class Stamps {
-    
+class Stamps
+    {
 public:
-    Stamps(string origin, int value); //Stamp object constructor
+    Stamps(std::string origin, int value); //Stamp object constructor
     int getFaceValue(); //get variable function
-    string getOrigin(); //get variable function
+    std::string getOrigin(); //get variable function
 private:
     //Variable List
-    string countryOfOrigin;
+    std::string countryOfOrigin;
     int faceValue;
     
-    void setOrigin(string origin); //set variable function
+    void setOrigin(std::string origin); //set variable function
     void setFaceValue(int value);  //set variable function
-};
+    };
 //*******************************************************************************
 //                    END OF CONDITIONAL BLOCK
 #endif /* defined(__Vectors_Lab1__Stamps__) */

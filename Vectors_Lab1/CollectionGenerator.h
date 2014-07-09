@@ -36,26 +36,27 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-using namespace std;
 //*******************************************************************************
 //                     USER DEFINED DATA TYPES
-class CollectionGenerator {
+
+class CollectionGenerator
+{
 public:
     void stampCollectionGenerator(); //Creates the vector of stamp objects
 private:
     //Variable List
-    vector<Stamps> stampList;
-    vector<Stamps> duplicates;
-    vector<Stamps> usa;
-    vector<Stamps> france;
-    vector<Stamps> germany;
-    vector<Stamps> spain;
-    vector<Stamps> holland;
+    std::vector<Stamps> stampList;
+    std::vector<Stamps> duplicates;
+    std::vector<Stamps> usa;
+    std::vector<Stamps> france;
+    std::vector<Stamps> germany;
+    std::vector<Stamps> spain;
+    std::vector<Stamps> holland;
 
-    string stampOriginGenerator(); //Randomly generates stamp origin
+    std::string stampOriginGenerator(); //Randomly generates stamp origin
     int stampFaceValueGenerator(); //Randomly generates stamp face value
     void stampSorter(); //Sorts the stamp obects within the vector by face value
-    void duplicateStampSeparator(vector<Stamps>& tempVec); //Removes duplicate entries out of the vector
+    void duplicateStampSeparator(std::vector<Stamps>& tempVec); //Removes duplicate entries out of the vector
     void stampCollectionSplitByOrigin(); //Splits up the stamplist vector and inserts objects into appropriate vectors by origin
     void StampCollectionDisplayFinalResult(); //Displays the stamp collection and total value
 };
