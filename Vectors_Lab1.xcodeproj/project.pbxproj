@@ -67,10 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				4ACB4827196CAC210093838E /* lab1.cpp */,
-				4A478F86196B904300C18917 /* CollectionGenerator.cpp */,
 				4A478F87196B904300C18917 /* CollectionGenerator.h */,
-				4A478F8C196C987600C18917 /* Stamps.cpp */,
+				4A478F86196B904300C18917 /* CollectionGenerator.cpp */,
 				4A478F8D196C987600C18917 /* Stamps.h */,
+				4A478F8C196C987600C18917 /* Stamps.cpp */,
 				4A478F7F196B8F6500C18917 /* Vectors_Lab1.1 */,
 			);
 			path = Vectors_Lab1;

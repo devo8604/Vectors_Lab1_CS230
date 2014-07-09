@@ -29,7 +29,7 @@ using namespace std;
 //             Definition of member functions for class Entry
 //*******************************************************************************
 
-vector<Stamps> stampList;
+vector<Stamps> stampListMaster;
 vector<Stamps> duplicates;
 vector<Stamps> usa;
 vector<Stamps> france;
@@ -46,7 +46,7 @@ void CollectionGenerator::stampCollectionGenerator()
     for(int listSize = 0; listSize < 100; listSize++)
     {
     
-    stampList.push_back(Stamps(stampOriginGenerator(), stampFaceValueGenerator()));
+    stampListMaster.push_back(Stamps(stampOriginGenerator(), stampFaceValueGenerator()));
 
     }
     
@@ -99,13 +99,13 @@ void CollectionGenerator::stampSorter()
     while (sorted != true)
     {
         sorted = true;
-        for (int i = 0; i < stampList.size()-1; i++)
+        for (int i = 0; i < stampListMaster.size()-1; i++)
         {
-            if (stampList[i].getFaceValue() > stampList[i+1].getFaceValue())
+            if (stampListMaster[i].getFaceValue() > stampListMaster[i+1].getFaceValue())
             {
-                *stampBuffer = stampList[i];
-                stampList[i] = stampList[i+1];
-                stampList[i+1] = *stampBuffer;
+                *stampBuffer = stampListMaster[i];
+                stampListMaster[i] = stampListMaster[i+1];
+                stampListMaster[i+1] = *stampBuffer;
                 sorted = false;
             }
         }
@@ -138,27 +138,27 @@ void CollectionGenerator::duplicateStampSeparator(vector<Stamps>& tempVec)
 
 void CollectionGenerator::stampCollectionSplitByOrigin()
 {
-    for (int i = 0; i < stampList.size(); i++)
+    for (int i = 0; i < stampListMaster.size(); i++)
     {
         string originBuffer = "";
-        originBuffer = stampList[i].getOrigin();
+        originBuffer = stampListMaster[i].getOrigin();
         
         if (originBuffer == "USA")
         {
-            usa.push_back(stampList[i]);
+            usa.push_back(stampListMaster[i]);
         } else if (originBuffer == "France")
         {
-            france.push_back(stampList[i]);
+            france.push_back(stampListMaster[i]);
         } else if (originBuffer == "Germany")
         {
-            germany.push_back(stampList[i]);
+            germany.push_back(stampListMaster[i]);
         } else if (originBuffer == "Spain")
         {
-            spain.push_back(stampList[i]);
+            spain.push_back(stampListMaster[i]);
         } else
-            holland.push_back(stampList[i]);
+            holland.push_back(stampListMaster[i]);
     }
-    stampList.erase(stampList.begin(), stampList.end());
+    stampListMaster.erase(stampListMaster.begin(), stampListMaster.end());
 }
 
 void CollectionGenerator::StampCollectionDisplayFinalResult()

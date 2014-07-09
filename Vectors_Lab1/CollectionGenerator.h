@@ -42,17 +42,17 @@
 class CollectionGenerator
 {
 public:
-    void stampCollectionGenerator();                            //Creates the vector of stamp objects
+    void stampCollectionGenerator();                            //Creates a vector of stamp objects
 private:
     //Variable List
-    std::vector<Stamps> stampList;
+    std::vector<Stamps> stampListMaster;
     std::vector<Stamps> duplicates;
     std::vector<Stamps> usa;
     std::vector<Stamps> france;
     std::vector<Stamps> germany;
     std::vector<Stamps> spain;
     std::vector<Stamps> holland;
-
+    
     std::string stampOriginGenerator();                         //Randomly generates stamp origin
     int stampFaceValueGenerator();                              //Randomly generates stamp face value
     void stampSorter();                                         //Sorts the stamp obects within the vector by face value
